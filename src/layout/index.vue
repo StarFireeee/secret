@@ -3,8 +3,10 @@
     <el-container>
       <el-aside :width="unfold ? '64px' : '200px'"><Aside @unfold="getUnfold"></Aside></el-aside>
       <el-container>
-        <el-header>{{ unfold }}</el-header>
-        <el-main>Main</el-main>
+        <el-header height="100px"><Header></Header></el-header>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -13,9 +15,10 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import Aside from './components/aside/index.vue'
+import Header from './components/header/index.vue'
 
 export default defineComponent({
-  components: { Aside },
+  components: { Aside, Header },
   setup() {
     let unfold = ref(false)
     function getUnfold(x: any) {
@@ -37,6 +40,10 @@ export default defineComponent({
 .el-container {
   position: relative;
   height: 100%;
+}
+
+.el-header {
+  padding: 0;
 }
 </style>
 

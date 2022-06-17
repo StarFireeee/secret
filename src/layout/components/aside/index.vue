@@ -41,7 +41,7 @@ export default defineComponent({
   name: 'Aside',
   emits: ['unfold'],
   setup(props, context) {
-    const isCollapse = ref<boolean>(true)
+    const isCollapse = ref<boolean>(false)
     const handleOpen = (key: string, keyPath: string[]) => {
       console.log(key, keyPath)
     }
@@ -90,9 +90,9 @@ export default defineComponent({
 }
 
 .btn-left {
-  left: 35px;
+  left: 33px;
 }
 .btn-right {
-  left: 175px;
+  left: 170px;
 }
 </style>
