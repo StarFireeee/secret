@@ -1,6 +1,6 @@
 <template>
   <el-button :class="isCollapse ? 'show-btn btn-left' : 'show-btn btn-right'" type="primary" :icon="isCollapse ? ArrowRightBold : ArrowLeftBold" @click="handleUnfold" />
-  <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen" @close="handleClose" :collapse-transition="false">
+  <el-menu default-active="home" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen" @close="handleClose" @select="handleNav" :collapse-transition="false">
     <el-sub-menu index="1">
       <template #title>
         <el-icon><Location /></el-icon>
@@ -19,28 +19,26 @@
         <el-menu-item index="1-4-1">item one</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="2">
+    <el-menu-item index="home">
       <el-icon><Menu /></el-icon>
-      <template #title>Navigator Two</template>
+      <template #title>home</template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
+    <el-menu-item index="history">
       <el-icon><Document /></el-icon>
-      <template #title>Navigator Three</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><Setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>history</template>
     </el-menu-item>
   </el-menu>
 </template>
 
 <script lang="ts">
+import { useRouter } from 'vue-router'
 import { ArrowRightBold, ArrowLeftBold } from '@element-plus/icons-vue'
 import { ref, defineComponent } from 'vue'
 export default defineComponent({
   name: 'Aside',
   emits: ['unfold'],
   setup(props, context) {
+    const router = useRouter()
     const isCollapse = ref<boolean>(false)
     const handleOpen = (key: string, keyPath: string[]) => {
       console.log(key, keyPath)
@@ -54,6 +52,13 @@ export default defineComponent({
       context.emit('unfold', isCollapse)
     }
 
+    function handleNav(index: string) {
+      router.push({
+        name: index,
+        params: {},
+      })
+    }
+
     context.emit('unfold', isCollapse)
 
     return {
@@ -63,6 +68,7 @@ export default defineComponent({
       handleUnfold,
       ArrowRightBold,
       ArrowLeftBold,
+      handleNav,
     }
   },
 })
