@@ -18,11 +18,17 @@ const routes: Array<RouteRecordRaw> = [
         path: '/',
         name: 'home',
         component: Home,
+        meta: {
+          title: '首页',
+        },
       },
       {
         path: '/history',
         name: 'history',
-        component: import(/* webpackChunkName: "group-user" */ '@/views/history/index.vue'),
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/history/index.vue'),
+        meta: {
+          title: '历史',
+        },
       },
     ],
   },

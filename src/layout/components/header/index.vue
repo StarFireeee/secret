@@ -12,13 +12,20 @@
 </template>
 
 <script lang="ts">
+import { useRoute, onBeforeRouteUpdate } from 'vue-router'
 import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: 'Header',
   setup() {
-    const title = ref('首页')
+    const title = ref<string>('')
+    const route = useRoute()
     type Item = { label: string }
     const items = ref<Array<Item>>([{ label: 'Tag 1' }, { label: 'Tag 2' }, { label: 'Tag 3' }, { label: 'Tag 4' }, { label: 'Tag 5' }])
+
+    title.value = route.meta.title as string
+    onBeforeRouteUpdate((to, from) => {
+      title.value = to.meta.title as string
+    })
 
     return { title, items }
   },
