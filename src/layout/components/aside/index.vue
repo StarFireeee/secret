@@ -27,6 +27,10 @@
       <el-icon><Document /></el-icon>
       <template #title>history</template>
     </el-menu-item>
+    <el-menu-item index="todolist">
+      <el-icon><Document /></el-icon>
+      <template #title>todolist</template>
+    </el-menu-item>
   </el-menu>
 </template>
 
@@ -41,10 +45,10 @@ export default defineComponent({
     const router = useRouter()
     const isCollapse = ref<boolean>(false)
     const handleOpen = (key: string, keyPath: string[]) => {
-      console.log(key, keyPath)
+      // console.log(key, keyPath)
     }
     const handleClose = (key: string, keyPath: string[]) => {
-      console.log(key, keyPath)
+      // console.log(key, keyPath)
     }
 
     function handleUnfold() {
@@ -74,31 +78,18 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="less" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
 }
-
 .el-menu {
-  height: 100%;
+  height: 95%;
 }
 
 .el-button {
-  opacity: 0.5;
-  width: 60px;
-  height: 100px !important;
-  position: absolute;
-  display: none !important;
-  top: 50%;
-  margin-top: -50px;
-  z-index: 999;
-}
-
-.btn-left {
-  left: 33px;
-}
-.btn-right {
-  left: 170px;
+  width: 100%;
+  height: 5%;
+  min-height: 32px;
 }
 </style>

@@ -30,6 +30,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '历史',
         },
       },
+      {
+        path: '/todolist',
+        name: 'todolist',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/todolist/index.vue'),
+        meta: {
+          title: '任务清单',
+        },
+      },
     ],
   },
 ]
