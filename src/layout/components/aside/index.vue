@@ -1,7 +1,7 @@
 <template>
   <el-button :class="isCollapse ? 'show-btn btn-left' : 'show-btn btn-right'" type="primary" :icon="isCollapse ? ArrowRightBold : ArrowLeftBold" @click="handleUnfold" />
   <el-menu default-active="home" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen" @close="handleClose" @select="handleNav" :collapse-transition="false">
-    <el-sub-menu index="1">
+    <!-- <el-sub-menu index="1">
       <template #title>
         <el-icon><Location /></el-icon>
         <span>Navigator One</span>
@@ -18,7 +18,7 @@
         <template #title><span>item four</span></template>
         <el-menu-item index="1-4-1">item one</el-menu-item>
       </el-sub-menu>
-    </el-sub-menu>
+    </el-sub-menu> -->
     <el-menu-item index="home">
       <el-icon><Menu /></el-icon>
       <template #title>home</template>
@@ -27,6 +27,14 @@
       <el-icon><Document /></el-icon>
       <template #title>history</template>
     </el-menu-item>
+    <el-sub-menu index="1">
+      <template #title>
+        <el-icon><Location /></el-icon>
+        <span>财政数据</span>
+      </template>
+      <el-menu-item index="finance">财政</el-menu-item>
+      <el-menu-item index="history">item two</el-menu-item>
+    </el-sub-menu>
     <el-menu-item index="todolist">
       <el-icon><Document /></el-icon>
       <template #title>todolist</template>
@@ -91,5 +99,6 @@ export default defineComponent({
   width: 100%;
   height: 5%;
   min-height: 32px;
+  border-radius: 0;
 }
 </style>

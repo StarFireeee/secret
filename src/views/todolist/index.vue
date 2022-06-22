@@ -1,12 +1,11 @@
 <template>
   <div class="btnbox">
-    <el-button type="primary">新增</el-button>
-    <el-button type="danger">删除</el-button>
+    <el-button type="primary" @click="handleAdd">新增</el-button>
   </div>
   <el-table :data="tableData" style="width: 100%">
     <el-table-column fixed prop="date" label="日期" width="120" />
-    <el-table-column prop="state" label="截止日期" width="120" />
-    <el-table-column prop="name" label="任务描述" />
+    <el-table-column prop="deadline" label="截止日期" width="120" />
+    <el-table-column prop="task" label="任务描述" />
     <el-table-column fixed="right" label="Operations" width="160">
       <template #default="scope">
         <el-button link type="primary" size="small" @click="handleData('finish', scope.row)">完成</el-button>
@@ -24,47 +23,29 @@ export default defineComponent({
   setup() {
     const tableData = reactive([
       {
+        id: 1,
         date: '2016-05-03',
-        name: 'Tom',
-        state: 'California',
-        city: 'Los Angeles',
-        address: 'No. 189, Grove St, Los Angeles',
-        zip: 'CA 90036',
-        tag: 'Home',
-      },
-      {
-        date: '2016-05-02',
-        name: 'Tom',
-        state: 'California',
-        city: 'Los Angeles',
-        address: 'No. 189, Grove St, Los Angeles',
-        zip: 'CA 90036',
-        tag: 'Office',
-      },
-      {
-        date: '2016-05-04',
-        name: 'Tom',
-        state: 'California',
-        city: 'Los Angeles',
-        address: 'No. 189, Grove St, Los Angeles',
-        zip: 'CA 90036',
-        tag: 'Home',
-      },
-      {
-        date: '2016-05-01',
-        name: 'Tom',
-        state: 'California',
-        city: 'Los Angeles',
-        address: 'No. 189, Grove St, Los Angeles',
-        zip: 'CA 90036',
-        tag: 'Office',
+        deadline: 'Tom',
+        task: '测试任务',
       },
     ])
 
     const handleData = (state: string, scope: any) => {
-      console.log(state, scope)
+      if (state === 'delete') {
+        tableData.pop()
+      }
     }
+    const handleAdd = () => {
+      tableData.push({
+        id: 1,
+        date: '2016-05-03',
+        deadline: 'Tom',
+        task: '测试任务',
+      })
+    }
+
     return {
+      handleAdd,
       handleData,
       tableData,
     }

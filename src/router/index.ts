@@ -38,6 +38,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '任务清单',
         },
       },
+      {
+        path: '/finance',
+        name: 'finance',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/finance/index.vue'),
+        meta: {
+          title: '财政数据',
+        },
+      },
     ],
   },
 ]
