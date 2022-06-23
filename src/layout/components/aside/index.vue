@@ -35,6 +35,14 @@
       <el-menu-item index="finance">财政</el-menu-item>
       <el-menu-item index="history">item two</el-menu-item>
     </el-sub-menu>
+    <el-sub-menu index="2">
+      <template #title>
+        <el-icon><Location /></el-icon>
+        <span>学习</span>
+      </template>
+      <el-menu-item index="drag">拖拽</el-menu-item>
+      <el-menu-item index="history">item two</el-menu-item>
+    </el-sub-menu>
     <el-menu-item index="todolist">
       <el-icon><Document /></el-icon>
       <template #title>todolist</template>

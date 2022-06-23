@@ -46,6 +46,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '财政数据',
         },
       },
+      {
+        path: '/drag',
+        name: 'drag',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/study/drag/index.vue'),
+        meta: {
+          title: '拖拽',
+        },
+      },
     ],
   },
 ]
