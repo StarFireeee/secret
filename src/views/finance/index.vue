@@ -130,6 +130,6 @@ export default defineComponent({
 <style lang="less" scoped>
 .mapchart {
   width: 800px;
-  height: 800px;
+  height: 600px;
 }
 </style>
