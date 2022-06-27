@@ -33,7 +33,7 @@
         <span>财政数据</span>
       </template>
       <el-menu-item index="finance">财政</el-menu-item>
-      <el-menu-item index="history">item two</el-menu-item>
+      <el-menu-item index="history">基础知识</el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="2">
       <template #title>
