@@ -54,6 +54,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '拖拽',
         },
       },
+      {
+        path: '/diary',
+        name: 'diary',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/diary/index.vue'),
+        meta: {
+          title: '日记',
+        },
+      },
     ],
   },
 ]
