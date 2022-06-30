@@ -55,11 +55,19 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
-        path: '/diary',
-        name: 'diary',
-        component: () => import(/* webpackChunkName: "group-user" */ '@/views/diary/index.vue'),
+        path: '/diary-read',
+        name: 'diary-read',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/diary/read/index.vue'),
         meta: {
-          title: '日记',
+          title: '日记列表',
+        },
+      },
+      {
+        path: '/diary-write',
+        name: 'diary-write',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/diary/write/index.vue'),
+        meta: {
+          title: '写日记',
         },
       },
     ],

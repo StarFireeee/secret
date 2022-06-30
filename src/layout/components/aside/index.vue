@@ -47,10 +47,14 @@
       <el-icon><Document /></el-icon>
       <template #title>todolist</template>
     </el-menu-item>
-    <el-menu-item index="diary">
-      <el-icon><Document /></el-icon>
-      <template #title>日记</template>
-    </el-menu-item>
+    <el-sub-menu index="3">
+      <template #title>
+        <el-icon><Location /></el-icon>
+        <span>随手记</span>
+      </template>
+      <el-menu-item index="diary-read">列表</el-menu-item>
+      <el-menu-item index="diary-write">记录</el-menu-item>
+    </el-sub-menu>
   </el-menu>
 </template>
 
