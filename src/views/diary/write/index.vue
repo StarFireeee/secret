@@ -2,7 +2,7 @@
   <div class="time">{{ time }}</div>
   <div style="border: 1px solid #ccc">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor style="height: 500px; overflow-y: hidden" v-model="valueHtml" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" />
+    <Editor style="height: 560px; overflow-y: hidden" v-model="valueHtml" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" />
   </div>
   <div class="btn">
     <el-button type="primary" @click="handleOK()">完成</el-button>
@@ -78,9 +78,11 @@ export default defineComponent({
 }
 .btn {
   padding: 20px;
+  display: flex;
+  justify-content: center;
   .el-button {
-    width: 100px;
-    margin: 0 auto;
+    width: 200px;
+    height: 40px;
   }
 }
 </style>
