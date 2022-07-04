@@ -1,5 +1,6 @@
 <template>
   <div class="common-layout">
+    <div class="title"></div>
     <el-container>
       <el-aside :width="unfold ? '64px' : '200px'"><Aside @unfold="getUnfold"></Aside></el-aside>
       <el-container>
@@ -34,6 +35,10 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.title {
+  height: 50px;
+  background: pink;
+}
 .common-layout {
   height: 100%;
 }
