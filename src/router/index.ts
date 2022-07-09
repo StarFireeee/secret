@@ -70,6 +70,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '写日记',
         },
       },
+      {
+        path: '/ordinary-war',
+        name: 'ordinary-war',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/games/ordinaryWar/index.vue'),
+        meta: {
+          title: '平凡对战',
+        },
+      },
     ],
   },
 ]

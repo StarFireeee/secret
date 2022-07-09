@@ -23,10 +23,7 @@
       <el-icon><Menu /></el-icon>
       <template #title>home</template>
     </el-menu-item>
-    <el-menu-item index="history">
-      <el-icon><Document /></el-icon>
-      <template #title>history</template>
-    </el-menu-item>
+
     <el-sub-menu index="1">
       <template #title>
         <el-icon><Location /></el-icon>
@@ -55,6 +52,17 @@
       <el-menu-item index="diary-read">列表</el-menu-item>
       <el-menu-item index="diary-write">记录</el-menu-item>
     </el-sub-menu>
+    <el-sub-menu index="4">
+      <template #title>
+        <el-icon><Location /></el-icon>
+        <span>游戏</span>
+      </template>
+      <el-menu-item index="ordinary-war">平凡对战</el-menu-item>
+    </el-sub-menu>
+    <el-menu-item index="history">
+      <el-icon><Document /></el-icon>
+      <template #title>history</template>
+    </el-menu-item>
   </el-menu>
 </template>
 
