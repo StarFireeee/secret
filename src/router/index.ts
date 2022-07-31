@@ -73,9 +73,9 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/ordinary-war',
         name: 'ordinary-war',
-        component: () => import(/* webpackChunkName: "group-user" */ '@/views/games/ordinaryWar/index.vue'),
+        component: () => import(/* webpackChunkName: "group-user" */ '@/views/games/myriad-world-war/index.vue'),
         meta: {
-          title: '平凡对战',
+          title: '万界争霸',
         },
       },
     ],

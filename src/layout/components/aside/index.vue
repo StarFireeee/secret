@@ -57,7 +57,7 @@
         <el-icon><Location /></el-icon>
         <span>游戏</span>
       </template>
-      <el-menu-item index="ordinary-war">平凡对战</el-menu-item>
+      <el-menu-item index="ordinary-war">万界争霸</el-menu-item>
     </el-sub-menu>
     <el-menu-item index="history">
       <el-icon><Document /></el-icon>
